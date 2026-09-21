@@ -14,8 +14,11 @@
     "build:server": "npm run build --prefix server",
     "build:client": "npm run build --prefix client",
     "build": "npm run build:server && npm run build:client",
-    "postinstall": "npm run prisma:generate --prefix server",
+    "postinstall": "prisma generate --schema=server/prisma/schema.prisma",
     "seed": "npm run seed --prefix server"
+  },
+  "dependencies": {
+    "prisma": "^5.22.0"
   },
   "devDependencies": {
     "concurrently": "^9.1.2"
